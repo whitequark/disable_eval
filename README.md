@@ -17,7 +17,7 @@ This gem should proactively protect you from remote code execution via [CVE-2013
   [CVE-2013-0333]: https://groups.google.com/forum/?fromgroups=#!topic/rubyonrails-security/1h2DR63ViGo
   [exploit]: http://ronin-ruby.github.com/blog/2013/01/28/new-rails-poc.html
 
-This gem will *not* protect you from SQL injections resulting from the aforementioned vulnerabilites.
+This gem will **not** protect you from SQL injections resulting from the aforementioned vulnerabilites.
 
 ## Installation
 
@@ -37,7 +37,7 @@ Or install it yourself as:
 
 Disable Eval includes a Rack middleware and a Railtie; if you include the gem in your Rails application, it will be activated automatically for all non-development environments.
 
-If your application is not Rails-based, add this to the *top* of your `config.ru`:
+If your application is not Rails-based, add this to the **top** of your `config.ru`:
 
 ``` ruby
 use DisableEval::Middleware
