@@ -35,7 +35,13 @@ Or install it yourself as:
 
 ## Usage
 
-Disable Eval includes a Rack middleware and a Railtie; if you include the gem in your Rails application, it will be activated automatically for all non-development environments.
+Disable Eval includes a Rack middleware and a Railtie; if you include the gem in your Rails application, it will be activated automatically for **production** environment.
+
+If you have publicly accessible environments other than `production`, add the middleware manually in the corresponding `environments/whatever.rb`:
+
+``` ruby
+config.middleware.insert 0, DisableEval::Middleware
+```
 
 If your application is not Rails-based, add this to the **top** of your `config.ru`:
 
@@ -43,7 +49,7 @@ If your application is not Rails-based, add this to the **top** of your `config.
 use DisableEval::Middleware
 ```
 
-It is important for the DisableEval middleware to be the first in the chain, as a middleware could contain a vulnerability. This was indeed the case in Rails.
+It is important for the DisableEval middleware to be the first in the chain, as a middleware could contain a vulnerability.
 
 ## Issues
 
